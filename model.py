@@ -119,7 +119,6 @@ class Model:
 
             self.clf8 = Pipeline([
                 ('feature_selection', PCA(n_components=n_features)),
-                ('scale', StandardScaler()),
                 ('classification', clfs)
             ])
 
