@@ -23,7 +23,7 @@ The dataset has 57 features and there aren't any Null/NaNs in the features, By l
 1. Principal component analysis (PCA) has been used to reduce the dimension using the Singular Value Decomposition method. The returned Principal components explain close to 100 percent of the total variance in the dataset.
 
 ## Modelling
-A voting Classifier has been created in the model.py. This can be summarized in the image below:  
+An ensembe Voting Classifier has been created in the model.py. This can be summarized in the image below:  
 
 ![Model Image](https://github.com/rietesh/arya_assignment/blob/master/Model.png?raw=true)  
 
