@@ -134,4 +134,21 @@ class Model:
         return self.clf.predict_proba(X)[:, 1]
         
 
-    
+
+y_train_proba = clf.predict_proba(X_train)
+y_test_proba = clf.predict_proba(X_test)
+
+precision_t, recall_t, thresholds_t = precision_recall_curve(y_train,  y_train_proba[:,1])
+precision, recall, thresholds = precision_recall_curve(y_test, y_test_proba[:,1])
+fscore = (2 * precision * recall) / (precision + recall)
+ix = np.argmax(fscore)
+print('Best Threshold {}'.format(thresholds[ix]))
+
+f = plt.figure(figsize=(15,10))
+plt.plot(thresholds, precision[:-1], "b--", label="Precision")
+plt.plot(thresholds, recall[:-1], "g--", label="Recall")
+plt.axvline(x=thresholds[ix])
+plt.xlabel("Threshold")
+plt.title('Test: Preecision, recall vs Thresholds')
+plt.legend()
+plt.show()
